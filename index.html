@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciklusok</title>
+</head>
+<body>
+    <script>
+// ---------------------------------- 9. fejezet: KONTROLL STRUKTÚRÁK (VEZÉRLÉSI SZERKEZETEK) ------------------------------
+//                     https://www.youtube.com/watch?v=xxQjJ2yg0tg&ab_channel=K%C3%B3db%C3%A1zis
+
+// Vezérlési szerkezetek : olyan nyelvi eszközök, amik a kódok futását befolyásolja
+ //                                - ciklikus működést eredményez
+ //                                - szabályozza a sorok lefutását
+
+ var szamok = [2, 5, 8, 54, 12, 20, 65, 77, 89];
+
+console.log(szamok[0]);
+// inicializálható egy változó --> 
+var parosSzam = 0;
+
+parosSzam += szamok[0] % 2 === 0 ? 1 : 0;
+parosSzam += szamok[1] % 2 === 0 ? 1 : 0;
+parosSzam += szamok[2] % 2 === 0 ? 1 : 0;
+parosSzam += szamok[3] % 2 === 0 ? 1 : 0;
+console.log(parosSzam);                 // Ezek itt valamiért nem azt adják amit kellene. 
+
+// --------------------------------------------- CIKLUSOK (LOOP-ok) ----------------------------------------------------
+
+var index = 1;
+var paratlanSzam = 0;
+while(index < 9){
+    paratlanSzam += szamok[index] % 2 === 1 ? 1 : 0;
+
+    //console.log(index)
+    index++;       //implementálás
+}
+console.log(paratlanSzam);
+
+//---------------------------------------
+
+  // for loop
+
+var paratlanSzam2 = 0;
+  for (var i = 1; i < 9; i++){
+        console.log(i);                      // szám sorszáma (indexe)
+        console.log(szamok[i]);                    // az adott index elemét írja ki ()
+        console.log('------');
+        paratlanSzam2 += szamok[i] % 2 === 1 ? 1 : 0;
+
+  }
+  console.log(paratlanSzam2);
+
+  // ------------------------------
+
+  console.log("()()()()()()()()()()()");
+  var paratlanSzam3 = 0;
+  for (var i = 1; i < szamok.length; i++){
+        console.log(i);                      // szám sor
+        console.log(szamok[i]);                    // az
+        console.log('------');
+        paratlanSzam3 += szamok[i] % 2 === 1 ? 1 : 0;
+
+  }
+  console.log(paratlanSzam3);
+
+  //-------------------------------------------
+
+     // for-of ciklus: 
+  var paratlanSzam4 = 0;
+     for (var szam of szamok ) {                           // a változó bármi lehet (szabadon választható) és általában egyes számban tűntetjük fel.
+            console.log(szam);                             // szamok--> ez a tömb 
+            paratlanSzam4 += szam % 2 === 1 ? 1 : 0;
+
+     } 
+     console.log(paratlanSzam);         
+                                           
+
+
+
+    </script>
+</body>
+</html>
